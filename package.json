@@ -12,6 +12,7 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.4",
     "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "browser-sync": "^2.26.5",
@@ -19,10 +20,17 @@
     "compression": "^1.7.4",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
-    "gulp-cli": "^2.2.0"
+    "gulp-cli": "^2.2.0",
+    "rollup": "^1.12.3",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
+    "rollup-plugin-node-resolve": "^5.0.0"
   },
   "dependencies": {
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "rxjs": "^6.5.2"
   }
 }
