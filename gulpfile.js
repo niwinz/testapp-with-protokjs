@@ -61,10 +61,16 @@ let rollupCache = {}
 exports.bundle = async function bundle() {
   const bundle = await rollup.rollup({
     cache: rollupCache,
-    input: "src/main.js",
+    input: {
+      sample1: "src/sample1/main.js",
+    },
+    manualChunks: {
+      "common": ["rxjs", "rxjs/operators", "react", "react-dom"]
+    },
     plugins: [
       rollupBabel({
         exclude: 'node_modules/**',
+        sourceMap: true
       }),
       rollupNodeResolve({
         mainFields: ['module', 'main'],
@@ -85,6 +91,10 @@ exports.bundle = async function bundle() {
     dir: "dist/",
     format: "system",
     sourcemap: true,
+    indent: true,
+    preferConst: true,
+    noConflict: true,
+    freeze: true,
   };
 
   await bundle.generate(outputOptions);
