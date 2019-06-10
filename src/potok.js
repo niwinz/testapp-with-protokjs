@@ -24,7 +24,12 @@ export function isEffect(event) {
 }
 
 export class Event {
-  constructor() {
+  static new(params) {
+    return new Event(param);
+  }
+
+  constructor(params) {
+    this.params = params;
     this[EVENT_SYM] = true;
 
     if (util.isFunction(this.update)) {

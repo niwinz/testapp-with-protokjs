@@ -26,3 +26,6 @@ export function merge(...data) {
   return Object.assign({}, ...data);
 }
 
+export function isInstanceOf(val, clazz) {
+  return val instanceof clazz;
+};

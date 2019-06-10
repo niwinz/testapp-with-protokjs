@@ -63,6 +63,7 @@ exports.bundle = async function bundle() {
     cache: rollupCache,
     input: {
       sample1: "src/sample1/main.js",
+      sample2: "src/sample2/main.js",
     },
     manualChunks: {
       "common": ["rxjs", "rxjs/operators", "react", "react-dom"]
@@ -101,6 +102,7 @@ exports.bundle = async function bundle() {
   await bundle.write(outputOptions);
 
   rollupCache = bundle.cache
+  browserSync.reload();
 };
 
 exports.build = gulp.series(exports.bundle);
